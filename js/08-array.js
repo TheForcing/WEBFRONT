@@ -133,3 +133,17 @@ fruits.sort(function(v1,v2){
 
 });
 console.log("SORT(User Defined):", fruits);
+
+// split : 특정 구분자를 기준으로 문자열 분리-> Arrays 반환
+const str= "JavaScript is somthing stange than other languager";
+let chunks = str.split(" "); // 공백으로 분리
+console.log("Split;", chunks);
+
+//loop1 
+for( let i=0; i<chunks.length; i++){
+    console.log("WORD:", chunks[i]);
+}
+//loop2 : for ... of
+for(let word of chunks){
+    console.log("for of:", word);
+}
