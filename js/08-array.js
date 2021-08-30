@@ -56,3 +56,80 @@ console.log("CONCAT:", items);
 //배열 요소 합치기 : join
 console.log("JOIN:", items.join(",")); // 요소를 ,로 합치기
 
+// push : 배열 맨 뒤에 새 요소 추가
+// pop : 배열 맨 뒤 요소를 추출 후 제거
+// push + pop // Stack 처럼 활용
+console.log("==========push and pop");
+let fruits = ['Banana','Orange', 'Apple', 'Mango'];
+console.log("Stack:", fruits);
+fruits.push("수박");
+console.log("Stack:", fruits);
+console.log("Pop:", fruits.pop()); // 맨 뒤 요소 추출
+console.log("Pop:", fruits.pop());
+console.log("Pop:", fruits.pop());
+
+console.log("Stack:", fruits);
+
+//Shift : 맨 앞에서 요소 추출 후 제거 :
+// Push+ shift : QUEUE 자료형 처럼 활용
+fruits = ['Banana','Orange', 'Apple', 'Mango'];
+fruits.push("수박");
+console.log("QUEUEL", fruits);
+console.log("Shift:", fruits.shift()); //첫 요소 추출 후 제거
+console.log("Shift:", fruits.shift()); //첫 요소 추출 후 제거
+console.log("Shift:", fruits.shift()); //첫 요소 추출 후 제거
+
+console.log("QUEUE:", fruits);
+
+//splice: 요소 삭제와 삽입을 한번에 할수 있다.
+fruits = ['Banana','Orange', 'Apple', 'Mango'];
+console.log("원본:",fruits);
+
+//인수가 1개 : 해당 인덱스부터 끝까지 추출 후 제거
+console.log("Splice(2):", fruits.splice(2));
+console.log("원본:",fruits);
+
+fruits = ['Banana','Orange', 'Apple', 'Mango'];
+console.log("원본:",fruits);
+// 인수가 2개: 1번째 인수 인덱스 부터, 2번째 인수 갯수 만큼
+//            추출 후 제거
+console.log("Splice(2,1)", fruits.splice(2,1));
+console.log("원본:",fruits);
+
+fruits = ['Banana','Orange', 'Apple', 'Mango'];
+console.log("원본:",fruits);
+//인수가 3개 이상: 1번째 인수 인덱스부터,
+//                2번째 인수 갯수만큼 추출 후 제거
+//                3번째 이후 인수들을 삽입한다.                
+console.log("스플라이스 3개 인수 이상",
+fruits.splice(2,1,"kiwi","Guava"));
+console.log("원보:", fruits);
+
+console.log("==============reverse");
+//배열의 슌서를 뒤집는다.
+fruits = ['Banana','Orange', 'Apple', 'Mango'];
+console.log("원본:",fruits);
+
+fruits.reverse();  // 배열 순서 뒤집기
+console.log("REVERSED:", fruits);
+console.log("=====SLice");
+// Slice: 배열의 일부 추출 
+// 추출내용 삭제하지 않음
+let slices = fruits.slice(1,2);
+console.log("조각:", slices);
+console.log("원본:", fruits);
+
+console.log("SORT");
+console.log("원본:", fruits);
+fruits.sort();    // 기본적으로는 오름차순(ASC)
+console.log("SORT(ASC):", fruits);
+
+// 사용자의 규칙으로 정렬할 경우, 키함수를 재정의
+fruits.sort(function(v1,v2){
+    // 반환 값이 0: 순번이 같다
+    if(v1==v2) return 0;
+    if(v1 <v2) return 1;
+    if(v1>v2) return -1;
+
+});
+console.log("SORT(User Defined):", fruits);
