@@ -127,4 +127,34 @@ function testReduce2(){
     }, []); //초기값
     console.log(result);
 }
-testReduce2();
+// testReduce2();
+
+function filterMapReduce(){
+    let source= [12,7,3,8,4,9,6,2,15,14];
+    /*목표
+    source 배열에서 짝수만 필터링 .filter
+    내부 요소를 2배 .map
+    합산 .reduce
+    */
+   let result =
+   source.filter(item => item%2==0)
+          .map(item=>item*2)
+          .reduce((acc,value)=>{
+          return acc + value;
+          },0);
+          console.log("Result:", result);
+}
+// filterMapReduce();
+
+
+
+function filterMap2(){
+
+ let source= [12,4,6,1,3,5,7];
+ let result=
+      source.filter(item => item%2!=0)
+            .map(item=>item*3);
+        
+    console.log(result);
+};
+filterMap2();
