@@ -158,6 +158,16 @@
                         })
                     }
             });
+            $(document).ready(function(){
+                //페이지 초기화 수행
+                $("#keyword").on("click", function(event){
+                    console.log(event); //이벤트 정봅 객체
+                    console.log(event.target); //이벤트 발생 객체
+                    console.log("눌런지 키:", event.keyCode);
+
+                    $("#btn-search").text($(event.target).val()+":검색");
+                })
+            });
 </script>
 
 </html>

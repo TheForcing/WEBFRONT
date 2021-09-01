@@ -87,21 +87,41 @@
     //가지고 있는 모든 속성의 반환
     console.log(obj[0].getAttributeNames());
     //title 속성을 확인
-    console.log("title:", ojb.attr("title")); //getElementByid
+    console.log("title:", obj.attr("title")); //getElementByid
     // title 속성의 변경
     obj.attr("title", "사진:"+ obj.attr("title"));
 
     //하단 Products의 이미지들의 title 속성도 변경해 봅시다
      let subs= $(".sub-image");  // ==getElementByclass
     
-     console,log(".sub-image:", subs);
+     console.log(".sub-image:", subs);
      for( let i=0; i<subs.length; i++){
          // jQuery 객체가 아닌 HTML 엘리먼트는
          // $로 묶어야 jQuery매서드를 호출할 수 있다.
          $(subs[i]).attr("title", "사진:"+$(subs[i]).attr("title"));
      }
-   }
    
+   testAttributese();
+   $("#main-image").on("click", function(){
+       console.log(event);
+       console.log("이벤트 발생 객체:", event.target);
+       alert($(event.target).attr("title"));
+   })
+      //class가 sub-image인 모든 요소들 검색
+      let products = $(".sub-image");
+      //JQuery는 검색된 요소가  여러 개에도 루프를 돌리지 않아도 된다.
+      products.on("click",function(event){
+          let obj = $(event.target);
+          let mainimage = $("#main-image");
+          mainImage.attr({
+             src: obj.attr('src'),
+             title:obj.attr('title')
+          });//여러 속성을 동시에 설정할떄는 JavaScript 객체
+          let title = $("product-info h2");
+          title.html(obj.attr("title"));
+          title.css("background-color:", obj.data("color"));
+     })
+   };
 </script>
 
 </html>
