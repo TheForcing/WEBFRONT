@@ -28,4 +28,14 @@
             &copy;Bit Academy
         </div>
     </body>
+    <script>
+        function addItem(event){
+            console.log(event);
+        }
+        window.addEventListener("load", function(event){
+            //추가 버튼을 눌렀을 때의 이벤트 연결
+            document.getElementById("btn-add")
+                    .addEventListener("click", addItem);
+         })
+    </script>
 </html>
